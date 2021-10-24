@@ -1,0 +1,6 @@
+[submodule "base_implementation/visual-tracking-matlab"]
+	path = base_implementation/visual-tracking-matlab
+	url = https://github.com/lukacu/visual-tracking-matlab
+[submodule "tracker_benchmark/tracker_benchmark"]
+	path = tracker_benchmark/tracker_benchmark
+	url = https://github.com/jwlim/tracker_benchmark
