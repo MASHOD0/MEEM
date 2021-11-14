@@ -173,12 +173,27 @@
  ┃ ┃ ┣ 📜updateSvmTracker.m
  ┃ ┃ ┗ 📜updateTrackerExperts.m
  ┃ ┣ 📜.git
+ ┃ ┃     - Git files
  ┃ ┣ 📜.gitignore
+ ┃ ┃     - Git ignore file
+ ┃ ┃    
  ┃ ┣ 📜compile_native.m
+ ┃ ┃    - Compile native code
+ ┃ ┃      (requires mex)
+ ┃ ┃    
  ┃ ┣ 📜README.md
  ┃ ┣ 📜run_ant.m
- ┃ ┣ 📜run_ivt.m
+ ┃ ┃   - Runs ant
+ ┃ ┃   ANT - Visual tracking using anchor templates
+ ┃ ┣ 📜run_ivt.m 
+ ┃ ┃  - Runs ivt
+ ┃ ┃  IVT - Incremental Learning for Robust Visual Tracking
  ┃ ┣ 📜run_l1apg.m
+ ┃ ┃  - Runs l1apg
+ ┃ ┃  L1APG - L1 Tracking using acclerated proximal gradient
  ┃ ┣ 📜run_lgt.m
+ ┃ ┃  - Runs lgt
+ ┃ ┃  LGT - Local - Global Appearance Tracker
  ┃ ┗ 📜run_meem.m
+      - Runs meem tracker
 ```
