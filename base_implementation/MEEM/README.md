@@ -26,18 +26,18 @@
  ```
 
 
- ### [createSampler.m](visual-tracking-matlab/meem/CreateSampler.m)
+ ### [createSampler.m](meem/CreateSampler.m)
 - Calls the fuction `createSampler()`
-```m
+```matlab
 sampler = [];
 sampler.radius=1;
 % sampler.scale_step = 1.1;
 ```
 
-### [createSvmTracker.m](visual-tracking-matlab/meem/CreateSvmTracker.m)
+### [createSvmTracker.m](meem/CreateSvmTracker.m)
 - Calls the fuction `createSvmTracker()`
 
-```m
+```matlab
 tracker = [];
 tracker.sv_size = 500;% maxial 100 cvs
 tracker.C = 100;
@@ -60,9 +60,9 @@ tracker.best_expert_idx = 1;
 tracker.failure = false;
 tracker.update_count = 0;
 ```
-### [updateSvmTracker.m](visual-tracking-matlab/meem/updateSvmTracker.m)
+### [updateSvmTracker.m](meem/updateSvmTracker.m)
 function to update the tracker
-```m
+```matlab
 function state = updateSvmTracker(state, sample, label, fuzzy_weight)
 
 sample = [state.svm_tracker.pos_sv;state.svm_tracker.neg_sv; sample];
@@ -196,9 +196,9 @@ state.experts{end}.Bias = state.svm_tracker.Bias;
         
 state.svm_tracker.update_count = state.svm_tracker.update_count + 1;
 ```
-### [tracker_meem_update.m](visual-tracking-matlab/meem/tracker_meem_update.m)
+### [tracker_meem_update.m](meem/tracker_meem_update.m)
 updates the meem tracker
-```m
+```matlab
 function [state, location, values] = tracker_meem_update(state, image, varargin)
 
     values = struct();
@@ -274,9 +274,9 @@ function [state, location, values] = tracker_meem_update(state, image, varargin)
 
 end
 ```
-### [tracker_meem_initialize.m](visual-tracking-matlab/meem/tracker_meem_initialize.m)
+### [tracker_meem_initialize.m](meem/tracker_meem_initialize.m)
 initializes the meem tracker
-```m
+```matlab
 function [state, location, values] = tracker_meem_initialize(image, region, varargin)
 
 warning('off','MATLAB:maxNumCompThreads:Deprecated');
@@ -398,7 +398,7 @@ end
 
 ### [updateTrackerExperts.m](visual-tracking-matlab/meem/updateTrackerExperts.m)
 function to update the experts
-```m
+```matlab
 function updateTrackerExperts
 global config
 global svm_tracker
@@ -418,7 +418,7 @@ end
 ### [expertsDo.m](visual-tracking-matlab/meem/expertsDo.m)
 - Calls the fuction `expertsDo()`
 
-```m
+```matlab
 
 function state = expertsDo(state, I_vf)
     % expertsDo - Do the experts
@@ -561,9 +561,9 @@ merged_peaks = peaks;
 end
 
 ```
-### [getLogLikelihoodEntropy.m](visual-tracking-matlab/meem/codegetLogLikelihoodEntropy)
+### [getLogLikelihoodEntropy.m](meem/codegetLogLikelihoodEntropy)
 calculates the log likelihood and entropy of a given state
-```m
+```matlab
 function [ll, entropy] = getLogLikelihoodEntropy (svm_score,label_prior,label_prior_neg)
 
 num = numel(svm_score);
@@ -579,9 +579,9 @@ entropy = -g_XY_Z*log(g_XY_Z)';% in case g is 0
 ll = log(max(p_XY_Z));
 ```
 
-### [GetFeatureRep.m](visual-tracking/meem/GetFeatureRep.m)
+### [GetFeatureRep.m](meem/GetFeatureRep.m)
 Computes the feature representation of the given state.
-```m
+```matlab
  compute feature representation: mxnxd, d is the feature dimension
 % decay factor and nbin is for the local histogram computation
 if size(I,3) == 3 && config.use_color
@@ -622,13 +622,13 @@ end
 F = double(reshape(cell2mat(F),size(F{1},1),size(F{1},2),[]));
 ```
 
- ### [calIIf.cpp](visual-tracking-matlab/meem/calcIIF.cpp)
+ ### [calIIf.cpp](meem/calcIIF.cpp)
 
 - Mex interface for IIF computation routine
 
-### [RGB2Lab.m](visual-tracking-matlab/meem/RGB2Lab.m)
+### [RGB2Lab.m](meem/RGB2Lab.m)
 Converts an RGB image to the L*a*b* color space.
-```m
+```matlab
 function [L,a,b] = RGB2Lab(R,G,B)
 %RGB2LAB Convert an image from RGB to CIELAB
 %
